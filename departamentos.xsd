@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  Laboratorio 1 - Almacenamiento y validación de ficheros XML en Oracle
+  Fichero : departamentos.xsd
+  ============================================================================
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ===================== TIPOS SIMPLES ===================== -->
+
+  <!-- Identificadores numéricos (department_id NUMBER(4), employee_id NUMBER(6)) -->
+  <xs:simpleType name="tIdDepartamento">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:maxInclusive value="9999"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tIdEmpleado">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:maxInclusive value="999999"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Cadenas no vacías con longitud máxima (VARCHAR2 de HR) -->
+  <xs:simpleType name="tTexto30">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tTexto40">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Email de HR: identificador en mayúsculas (p. ej. SKING), máx. 25 -->
+  <xs:simpleType name="tEmail">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]+"/>
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Código de puesto (jobs.job_id), p. ej. AD_PRES, IT_PROG -->
+  <xs:simpleType name="tCodigoPuesto">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2}_[A-Z]{2,7}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Salario NUMBER(8,2) con restricción CHECK (salary > 0) -->
+  <xs:simpleType name="tSalario">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:totalDigits value="8"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Comisión NUMBER(2,2): valores entre 0 y 0.99 -->
+  <xs:simpleType name="tComision">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="0.99"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ===================== TIPOS COMPLEJOS ===================== -->
+
+  <!-- Puesto: texto (job_title) + atributo codigo (job_id) -->
+  <xs:complexType name="tPuesto">
+    <xs:simpleContent>
+      <xs:extension base="tTexto40">
+        <xs:attribute name="codigo" type="tCodigoPuesto" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Empleado (tablas EMPLOYEES + JOBS) -->
+  <xs:complexType name="tEmpleado">
+    <xs:sequence>
+      <xs:element name="nombre"            type="tTexto30" minOccurs="0"/>
+      <xs:element name="apellidos"         type="tTexto30"/>
+      <xs:element name="email"             type="tEmail"/>
+      <xs:element name="fechaContratacion" type="xs:date"/>
+      <xs:element name="puesto"            type="tPuesto"/>
+      <xs:element name="salario"           type="tSalario"/>
+      <xs:element name="comision"          type="tComision" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="tIdEmpleado" use="required"/>
+  </xs:complexType>
+
+  <!-- Lista de empleados de un departamento, con atributo total -->
+  <xs:complexType name="tEmpleados">
+    <xs:sequence>
+      <xs:element name="empleado" type="tEmpleado" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="total" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+
+  <!-- Departamento (tablas DEPARTMENTS + LOCATIONS + COUNTRIES) -->
+  <xs:complexType name="tDepartamento">
+    <xs:sequence>
+      <xs:element name="nombre"    type="tTexto30"/>
+      <xs:element name="ciudad"    type="tTexto30"/>
+      <xs:element name="pais"      type="tTexto40"/>
+      <xs:element name="empleados" type="tEmpleados"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="tIdDepartamento" use="required"/>
+  </xs:complexType>
+
+  <!-- ===================== ELEMENTO RAÍZ ===================== -->
+  <xs:element name="departamentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="departamento" type="tDepartamento" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

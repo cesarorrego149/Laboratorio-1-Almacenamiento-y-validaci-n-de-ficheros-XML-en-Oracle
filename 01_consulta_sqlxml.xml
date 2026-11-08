@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<departamentos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.unir.net/lab1/departamentos.xsd">
+  <departamento id="10">
+    <nombre>Administration</nombre>
+    <ciudad>Seattle</ciudad>
+    <pais>United States of America</pais>
+    <empleados total="1">
+      <empleado id="200">
+        <nombre>Jennifer</nombre>
+        <apellidos>Whalen</apellidos>
+        <email>JWHALEN</email>
+        <fechaContratacion>2003-09-17</fechaContratacion>
+        <puesto codigo="AD_ASST">Administration Assistant</puesto>
+        <salario>4400</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+  <departamento id="20">
+    <nombre>Marketing</nombre>
+    <ciudad>Toronto</ciudad>
+    <pais>Canada</pais>
+    <empleados total="2">
+      <empleado id="201">
+        <nombre>Michael</nombre>
+        <apellidos>Hartstein</apellidos>
+        <email>MHARTSTE</email>
+        <fechaContratacion>2004-02-17</fechaContratacion>
+        <puesto codigo="MK_MAN">Marketing Manager</puesto>
+        <salario>13000</salario>
+      </empleado>
+      <empleado id="202">
+        <nombre>Pat</nombre>
+        <apellidos>Fay</apellidos>
+        <email>PFAY</email>
+        <fechaContratacion>2005-08-17</fechaContratacion>
+        <puesto codigo="MK_REP">Marketing Representative</puesto>
+        <salario>6000</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+  <departamento id="40">
+    <nombre>Human Resources</nombre>
+    <ciudad>London</ciudad>
+    <pais>United Kingdom</pais>
+    <empleados total="1">
+      <empleado id="203">
+        <nombre>Susan</nombre>
+        <apellidos>Mavris</apellidos>
+        <email>SMAVRIS</email>
+        <fechaContratacion>2002-06-07</fechaContratacion>
+        <puesto codigo="HR_REP">Human Resources Representative</puesto>
+        <salario>6500</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+  <departamento id="60">
+    <nombre>IT</nombre>
+    <ciudad>Southlake</ciudad>
+    <pais>United States of America</pais>
+    <empleados total="5">
+      <empleado id="103">
+        <nombre>Alexander</nombre>
+        <apellidos>Hunold</apellidos>
+        <email>AHUNOLD</email>
+        <fechaContratacion>2006-01-03</fechaContratacion>
+        <puesto codigo="IT_PROG">Programmer</puesto>
+        <salario>9000</salario>
+      </empleado>
+      <empleado id="104">
+        <nombre>Bruce</nombre>
+        <apellidos>Ernst</apellidos>
+        <email>BERNST</email>
+        <fechaContratacion>2007-05-21</fechaContratacion>
+        <puesto codigo="IT_PROG">Programmer</puesto>
+        <salario>6000</salario>
+      </empleado>
+      <empleado id="105">
+        <nombre>David</nombre>
+        <apellidos>Austin</apellidos>
+        <email>DAUSTIN</email>
+        <fechaContratacion>2005-06-25</fechaContratacion>
+        <puesto codigo="IT_PROG">Programmer</puesto>
+        <salario>4800</salario>
+      </empleado>
+      <empleado id="106">
+        <nombre>Valli</nombre>
+        <apellidos>Pataballa</apellidos>
+        <email>VPATABAL</email>
+        <fechaContratacion>2006-02-05</fechaContratacion>
+        <puesto codigo="IT_PROG">Programmer</puesto>
+        <salario>4800</salario>
+      </empleado>
+      <empleado id="107">
+        <nombre>Diana</nombre>
+        <apellidos>Lorentz</apellidos>
+        <email>DLORENTZ</email>
+        <fechaContratacion>2007-02-07</fechaContratacion>
+        <puesto codigo="IT_PROG">Programmer</puesto>
+        <salario>4200</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+  <departamento id="70">
+    <nombre>Public Relations</nombre>
+    <ciudad>Munich</ciudad>
+    <pais>Germany</pais>
+    <empleados total="1">
+      <empleado id="204">
+        <nombre>Hermann</nombre>
+        <apellidos>Baer</apellidos>
+        <email>HBAER</email>
+        <fechaContratacion>2002-06-07</fechaContratacion>
+        <puesto codigo="PR_REP">Public Relations Representative</puesto>
+        <salario>10000</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+  <departamento id="90">
+    <nombre>Executive</nombre>
+    <ciudad>Seattle</ciudad>
+    <pais>United States of America</pais>
+    <empleados total="3">
+      <empleado id="100">
+        <nombre>Steven</nombre>
+        <apellidos>King</apellidos>
+        <email>SKING</email>
+        <fechaContratacion>2003-06-17</fechaContratacion>
+        <puesto codigo="AD_PRES">President</puesto>
+        <salario>24000</salario>
+      </empleado>
+      <empleado id="101">
+        <nombre>Neena</nombre>
+        <apellidos>Kochhar</apellidos>
+        <email>NKOCHHAR</email>
+        <fechaContratacion>2005-09-21</fechaContratacion>
+        <puesto codigo="AD_VP">Administration Vice President</puesto>
+        <salario>17000</salario>
+      </empleado>
+      <empleado id="102">
+        <nombre>Lex</nombre>
+        <apellidos>De Haan</apellidos>
+        <email>LDEHAAN</email>
+        <fechaContratacion>2001-01-13</fechaContratacion>
+        <puesto codigo="AD_VP">Administration Vice President</puesto>
+        <salario>17000</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+  <departamento id="110">
+    <nombre>Accounting</nombre>
+    <ciudad>Seattle</ciudad>
+    <pais>United States of America</pais>
+    <empleados total="2">
+      <empleado id="205">
+        <nombre>Shelley</nombre>
+        <apellidos>Higgins</apellidos>
+        <email>SHIGGINS</email>
+        <fechaContratacion>2002-06-07</fechaContratacion>
+        <puesto codigo="AC_MGR">Accounting Manager</puesto>
+        <salario>12008</salario>
+      </empleado>
+      <empleado id="206">
+        <nombre>William</nombre>
+        <apellidos>Gietz</apellidos>
+        <email>WGIETZ</email>
+        <fechaContratacion>2002-06-07</fechaContratacion>
+        <puesto codigo="AC_ACCOUNT">Public Accountant</puesto>
+        <salario>8300</salario>
+      </empleado>
+    </empleados>
+  </departamento>
+</departamentos>
